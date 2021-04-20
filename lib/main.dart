@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Glade',
       theme: ThemeData(
-        primaryColor: primaryColor
+        primaryColor: primaryColor,
+
       ),
       home: NavScreen(),
 
