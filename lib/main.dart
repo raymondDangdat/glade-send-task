@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:glade_two/constants/colors.dart';
-import 'package:glade_two/screens/home_screen.dart';
 import 'package:glade_two/screens/screens.dart';
 
 import 'screens/nav_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MyApp());
 }
 
@@ -28,6 +31,7 @@ class MyApp extends StatelessWidget {
         SendMoneyScreen.routeName: (context) => SendMoneyScreen(),
         MoreScreen.routeName: (context) => MoreScreen(),
         CardScreen.routeName: (context) => CardScreen(),
+        CryptoCurrency.routeName: (context) => CryptoCurrency(),
       },
     );
   }

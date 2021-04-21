@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:glade_two/constants/colors.dart';
+import 'package:glade_two/screens/crypto_currency.dart';
 import 'package:intl/intl.dart';
 class HomeScreen extends StatefulWidget {
   static const routeName = 'home-screen';
@@ -104,18 +105,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
             Row(
               children: [
-                menuItem(title: 'Fund',backgroundColor: Color.fromRGBO(255, 234, 233, 1), subTitle: 'transfer', imageUrl: 'assets/images/fundtransfer.png', description: "Send Funds to any", description2: 'Bank Account'),
+                menuItem(title: 'Fund',backgroundColor: Color.fromRGBO(255, 234, 233, 1), subTitle: 'transfer', imageUrl: 'assets/images/fundtransfer.png', description: "Send Funds to any", description2: 'Bank Account', onTap: (){}),
                 SizedBox(width: 10,),
-                menuItem(title: 'Digital', backgroundColor: Color.fromRGBO(240, 250, 255, 1), subTitle: 'Invoicing', description: 'Send Funds to any', description2: 'Bank Account', imageUrl: 'assets/images/accountstatement.png')
+                menuItem(title: 'Digital', onTap: (){}, backgroundColor: Color.fromRGBO(240, 250, 255, 1), subTitle: 'Invoicing', description: 'Send Funds to any', description2: 'Bank Account', imageUrl: 'assets/images/accountstatement.png')
               ],
             ),
             SizedBox(height: 10,),
 
             Row(
               children: [
-                menuItem(title: 'Crypto', subTitle: 'currency', description2: 'Send Funds to any', imageUrl: 'assets/images/btclogo.png', backgroundColor: Color.fromRGBO(237, 228, 255, 1) , description: 'Bank Account'),
+                menuItem(title: 'Crypto', onTap: (){
+                  Navigator.pushNamed(context, CryptoCurrency.routeName);
+                }, subTitle: 'currency', description2: 'Send Funds to any', imageUrl: 'assets/images/btclogo.png', backgroundColor: Color.fromRGBO(237, 228, 255, 1) , description: 'Bank Account'),
                 SizedBox(width: 10,),
-                menuItem(title: 'Account', description: 'Send Funds to any', description2: 'Bank Account', subTitle: 'statement', imageUrl: 'assets/images/accountstatement.png', backgroundColor: Color.fromRGBO(227, 255, 239, 1))
+                menuItem(title: 'Account', onTap: (){} ,description: 'Send Funds to any', description2: 'Bank Account', subTitle: 'statement', imageUrl: 'assets/images/accountstatement.png', backgroundColor: Color.fromRGBO(227, 255, 239, 1))
               ],
             )
           ],
@@ -124,10 +127,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget menuItem({String title, subTitle, description, imageUrl, Color backgroundColor, description2}){
+  Widget menuItem({String title, subTitle, description, imageUrl, Color backgroundColor, description2, Function onTap}){
     return Expanded(
       child: InkWell(
-        onTap: (){},
+        onTap: onTap,
         child: Container(
           height: MediaQuery.of(context).size.height * 0.25,
           decoration: BoxDecoration(
