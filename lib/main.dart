@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Glade',
       theme: ThemeData(
         primaryColor: primaryColor,
-
+        fontFamily: "DMSans",
+        backgroundColor: bgColor,
       ),
       home: NavScreen(),
 

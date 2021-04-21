@@ -9,7 +9,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Send Money'),),
+      body: Center(child: Text('Skadgate Innovations', style: TextStyle( fontSize: 15, fontWeight: FontWeight.bold, fontFamily: "DMSRegular"),),),
     );
   }
 }

@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.glade_two">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="glade_two"
         android:icon="@mipmap/ic_launcher">
