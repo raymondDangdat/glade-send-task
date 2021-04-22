@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:glade_two/constants/colors.dart';
 import 'package:glade_two/screens/screens.dart';
+import 'package:glade_two/screens/splash_screen.dart';
 
 import 'screens/nav_screen.dart';
 
@@ -23,15 +24,17 @@ class MyApp extends StatelessWidget {
         fontFamily: "DMSans",
         backgroundColor: bgColor,
       ),
-      home: NavScreen(),
+      home: SplashScreen(),
 
       routes: {
+        SplashScreen.routeName: (context) => SplashScreen(),
         NavScreen.routeName: (context) => NavScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
         SendMoneyScreen.routeName: (context) => SendMoneyScreen(),
         MoreScreen.routeName: (context) => MoreScreen(),
         CardScreen.routeName: (context) => CardScreen(),
         CryptoCurrency.routeName: (context) => CryptoCurrency(),
+        SecondNavScreen.routeName: (context) => SecondNavScreen(),
       },
     );
   }

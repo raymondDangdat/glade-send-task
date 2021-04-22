@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:glade_two/constants/colors.dart';
 import 'package:glade_two/screens/crypto_currency.dart';
+import 'package:glade_two/screens/screens.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = 'home-screen';
@@ -105,7 +106,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
             Row(
               children: [
-                menuItem(title: 'Fund',backgroundColor: Color.fromRGBO(255, 234, 233, 1), subTitle: 'transfer', imageUrl: 'assets/images/fundtransfer.png', description: "Send Funds to any", description2: 'Bank Account', onTap: (){}),
+                menuItem(title: 'Fund',backgroundColor: Color.fromRGBO(255, 234, 233, 1), subTitle: 'transfer', imageUrl: 'assets/images/fundtransfer.png', description: "Send Funds to any", description2: 'Bank Account', onTap: (){
+                  Navigator.pushReplacementNamed(context, SecondNavScreen.routeName);
+                }),
                 SizedBox(width: 10,),
                 menuItem(title: 'Digital', onTap: (){}, backgroundColor: Color.fromRGBO(240, 250, 255, 1), subTitle: 'Invoicing', description: 'Send Funds to any', description2: 'Bank Account', imageUrl: 'assets/images/accountstatement.png')
               ],

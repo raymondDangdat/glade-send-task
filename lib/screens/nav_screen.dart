@@ -19,8 +19,6 @@ class _NavScreenState extends State<NavScreen> {
     });
   }
 
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static  List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     SendMoneyScreen(),

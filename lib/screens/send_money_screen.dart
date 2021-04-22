@@ -159,10 +159,10 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
         onTap: (){},
         minVerticalPadding: 20,
         title:
-        Text(date, style: TextStyle(color: Color.fromRGBO(152, 126, 167, 1), fontSize: 9.0, letterSpacing: 0.11),),
+        Text(date, style: TextStyle(color: Color.fromRGBO(152, 126, 167, 1), fontSize: 9.0, letterSpacing: 0.11, fontFamily: 'raleway'),),
         subtitle: Text(naration, style: TextStyle(color: Color.fromRGBO(152, 126, 167, 1), fontSize: 12.0, letterSpacing: 0.14, fontFamily: "DMSRegular"),),
 
-        trailing: Text(amount, style: TextStyle(color: amountColor, fontSize: 14.0, fontWeight: FontWeight.bold, letterSpacing: 0.14, fontFamily: "DMSans")),
+        trailing: Text(amount, style: TextStyle(color: amountColor, fontSize: 14.0, fontWeight: FontWeight.bold, letterSpacing: 0.14, fontFamily: "raleway")),
       ),
     );
   }

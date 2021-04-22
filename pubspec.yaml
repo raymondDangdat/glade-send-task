@@ -16,12 +16,19 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.20.0-nullsafety.3
+  animated_splash_screen: ^1.1.0
   font_awesome_flutter: ^9.0.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons:
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/glade.png"
+
   flutter_native_splash: ^1.1.7+1
 flutter_native_splash:
   color: "#67407E"
@@ -33,6 +40,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/images/
+     - assets/icon/
 
 
   fonts:
@@ -54,6 +62,11 @@ flutter:
      - family: DMSRegular
        fonts:
         - asset: assets/fonts/DMSans-Medium.ttf
+          weight: 700
+
+     - family: raleway
+       fonts:
+        - asset: assets/fonts/raleway.ttf
           weight: 700
 
   # For details regarding fonts from package dependencies,
