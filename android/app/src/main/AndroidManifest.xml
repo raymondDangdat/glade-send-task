@@ -2,7 +2,7 @@
     package="com.glade_two">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="glade_two"
+        android:label="Glade"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

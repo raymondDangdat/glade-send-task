@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glade_two/constants/colors.dart';
 
 import 'screens.dart';
@@ -36,21 +37,25 @@ class _NavScreenState extends State<NavScreen> {
 
       bottomNavigationBar: BottomNavigationBar(
 
-        items: const <BottomNavigationBarItem>[
+        items:  <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: SvgPicture.asset('assets/images/home.svg', color: primaryLight,),
+            activeIcon: SvgPicture.asset('assets/images/home.svg', color: primaryColor,),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: SvgPicture.asset('assets/images/sendmoney.svg', color: primaryLight,),
+            activeIcon: SvgPicture.asset('assets/images/sendmoney.svg', color: primaryColor,),
             label: 'Send Money',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
+            icon: SvgPicture.asset('assets/images/card.svg', color: primaryLight,),
+            activeIcon: SvgPicture.asset('assets/images/card.svg', color: primaryColor,),
             label: 'Cards',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.more_horiz),
+            icon: SvgPicture.asset('assets/images/more.svg', color: primaryLight,),
+            activeIcon: SvgPicture.asset('assets/images/more.svg', color: primaryColor,),
             label: 'More',
           ),
         ],

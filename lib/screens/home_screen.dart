@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:glade_two/constants/colors.dart';
 import 'package:glade_two/screens/crypto_currency.dart';
-import 'package:intl/intl.dart';
+
 class HomeScreen extends StatefulWidget {
   static const routeName = 'home-screen';
   @override
@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: InkWell(
         onTap: onTap,
         child: Container(
-          height: MediaQuery.of(context).size.height * 0.25,
+          height: MediaQuery.of(context).size.height * 0.3,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(9),
             color: backgroundColor,

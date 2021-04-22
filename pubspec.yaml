@@ -22,6 +22,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^1.1.7+1
+flutter_native_splash:
+  color: "#67407E"
 
 flutter:
 
