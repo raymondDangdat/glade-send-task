@@ -9,6 +9,13 @@ class SendMoneyScreen extends StatefulWidget {
 }
 
 class _SendMoneyScreenState extends State<SendMoneyScreen> {
+  bool showAvailableBalance = true;
+
+  @override
+  void initState() {
+    showAvailableBalance = true;
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -19,15 +26,16 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Colors.grey[300],
+                color: Color.fromRGBO(103, 64, 126, 1)
               ),
               child: LayoutBuilder(
                 builder: (_, constraints) {
                   return Stack(
                     children: [
                       Image.asset(
-                        'assets/images/sliverappbarbackground.png',
-                        fit: BoxFit.contain,
+                        'assets/images/sliverappbarbackground.png', height: 170,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
                       ),
 
                       Row(
@@ -71,7 +79,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
 
                                     ],
                                   ),
-                                  Text('Welcome back @ devchris', style: TextStyle(fontSize: 10, color: bgColor, fontFamily: "DMSRegular"),)
+                                  Text('Welcome back @devchris', style: TextStyle(fontSize: 10, color: bgColor, fontFamily: "DMSRegular"),)
                                 ],
                               ),
 
@@ -83,7 +91,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                         top: 155,
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          height: 100,
+                          height: 90,
                           decoration: BoxDecoration(
                             color: bgColor,
                             borderRadius: BorderRadius.only(topRight: Radius.circular(20), topLeft: Radius.circular(20))
@@ -106,17 +114,25 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                 child: Column(
                   children: [
                     SizedBox(height: 15,),
-                    Text('USD ACCOUNT', style: TextStyle(fontSize: 10.0, color: Color.fromRGBO(255, 255, 255, 0.4), letterSpacing: 10),),
+                    Text(showAvailableBalance ?  'USD ACCOUNT' : 'Naira Account', style: TextStyle(fontSize: 10.0, color: Color.fromRGBO(255, 255, 255, 0.4), letterSpacing: 10),),
                     ListTile(
                       leading: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          IconButton(icon: Icon(Icons.arrow_back_ios, color: yellowColor,), onPressed: (){}),
+                          IconButton(icon: Icon(Icons.arrow_back_ios, color: yellowColor,), onPressed: (){
+                            setState(() {
+                              showAvailableBalance = !showAvailableBalance;
+                            });
+                          }),
                         ],
                       ),
-                      title: Text('\$5,123', style: TextStyle(fontSize: 54, color: bgColor, letterSpacing: -2.7, fontFamily: "DMSRegular", ),),
+                      title: Text(showAvailableBalance ? '\$5,123' : 'N675,00.01', style: TextStyle(fontSize: showAvailableBalance ? 54 : 32, color: bgColor, letterSpacing: -2.7, fontFamily: "DMSRegular", ),),
                       subtitle: Text('Available Balance' , style: TextStyle(fontSize: 13, color: bgColor, letterSpacing: 0, fontFamily: "DMSRegular", )),
-                      trailing: IconButton(icon: Icon(Icons.arrow_forward_ios, color: yellowColor,), onPressed: (){}),
+                      trailing: IconButton(icon: Icon(Icons.arrow_forward_ios, color: yellowColor,), onPressed: (){
+                        setState(() {
+                          showAvailableBalance = !showAvailableBalance;
+                        });
+                      }),
                     ),
                   ],
                 ),
@@ -159,7 +175,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
         onTap: (){},
         minVerticalPadding: 20,
         title:
-        Text(date, style: TextStyle(color: Color.fromRGBO(152, 126, 167, 1), fontSize: 9.0, letterSpacing: 0.11, fontFamily: 'raleway'),),
+        Text(date, style: TextStyle(color: Color.fromRGBO(152, 126, 167, 1), fontSize: 10.0, letterSpacing: 0.11, fontFamily: 'raleway'),),
         subtitle: Text(naration, style: TextStyle(color: Color.fromRGBO(152, 126, 167, 1), fontSize: 12.0, letterSpacing: 0.14, fontFamily: "DMSRegular"),),
 
         trailing: Text(amount, style: TextStyle(color: amountColor, fontSize: 14.0, fontWeight: FontWeight.bold, letterSpacing: 0.14, fontFamily: "raleway")),
